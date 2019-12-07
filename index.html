@@ -143,8 +143,6 @@
     
 </div>
 
-<p id="demo"></p>
-
 <script>
 var slideIndex = 1;
 showDivs(slideIndex);
@@ -167,12 +165,14 @@ for (i = 0; i < x.length; i++) {
 }
     x[slideIndex-1].style.display = "block";
 }
-<script>
 
 function keyPress(event) {
     var x2 = event.key;
     if(x2 == "ArrowLeft"){
-        document.getElementById("demo").innerHTML = "The PRESSED key was: " + x2;
+        plusDivs(-1);
+    }
+    if(x2 == "ArrowRight"){
+        plusDivs(1);
     }
 }
 </script>
