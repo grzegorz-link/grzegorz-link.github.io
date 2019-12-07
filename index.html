@@ -19,15 +19,6 @@
         
         gtag('config', 'UA-143784188-1');
         </script>
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script>
-        $(document).on("pagecreate","#pageone",function(){
-                       $("p").on("swipe",function(){
-                                 $("span").text("Swipe detected!");
-                                 });                       
-                       });
-        </script>
 </head>
 <body onkeydown="keyPress(event)">
 
@@ -150,18 +141,6 @@
     <button class="w3-button demo" onclick="currentDiv(91)">Last</button>
     <button class="w3-button demo" onclick="currentDiv(92)">Bonus</button>
     
-</div>
-
-<div data-role="page" id="pageone">
-    <div data-role="header">
-        <h1>The swipe Event</h1>
-    </div>
-    
-    <div data-role="main" class="ui-content">
-        <p>Swipe this text or in the box below.</p>
-        <p style="border:1px solid black;height:200px;width:200px;"></p>
-        <p><span style="color:red"></span></p>
-    </div>
 </div>
 
 <script>
