@@ -20,7 +20,7 @@
         gtag('config', 'UA-143784188-1');
         </script>
 </head>
-<body>
+<body onkeydown="keyPress(event)">
 
 <img class="mySlides" src="assets/working-strategies.001.jpeg">
 <img class="mySlides" src="assets/working-strategies.002.jpeg">
@@ -165,6 +165,12 @@ for (i = 0; i < x.length; i++) {
 }
     x[slideIndex-1].style.display = "block";
 }
+
+function keyPress(event) {
+    var x = event.key;
+    if(x=="ArrowRight"){
+        plusDivs(1);
+    }
 </script>
 
 <div class="footer">
