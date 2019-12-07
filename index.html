@@ -165,6 +165,14 @@ for (i = 0; i < x.length; i++) {
 }
     x[slideIndex-1].style.display = "block";
 }
+<script>
+
+function keyPress(event) {
+    var x = event.key;
+    if(x=="ArrowLeft"){
+        document.getElementById("demo").innerHTML = "The PRESSED key was: " + x;
+    }
+}
 </script>
 
 <div class="footer">
