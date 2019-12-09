@@ -3,18 +3,20 @@ let touchstartY = 0;
 let touchendX = 0;
 let touchendY = 0;
 
-const gestureZone = document.getElementById('gestureZone');
+function init() {
+    const gestureZone = document.getElementById('gestureZone');
 
-gestureZone.addEventListener('touchstart', function(event) {
+    gestureZone.addEventListener('touchstart', function(event) {
                              touchstartX = event.changedTouches[0].screenX;
                              touchstartY = event.changedTouches[0].screenY;
                              }, false);
 
-gestureZone.addEventListener('touchend', function(event) {
+    gestureZone.addEventListener('touchend', function(event) {
                              touchendX = event.changedTouches[0].screenX;
                              touchendY = event.changedTouches[0].screenY;
                              handleGesture();
                              }, false);
+}
 
 function handleGesture() {
     if (touchendX <= touchstartX) {
@@ -38,3 +40,9 @@ function handleGesture() {
         console.log('Tap');
     }
 }
+
+document.addEventListener('readystatechange', function() {
+                          if (document.readyState === "complete") {
+                            init();
+                          }
+});
