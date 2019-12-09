@@ -30,8 +30,10 @@ function handleTouchMove(evt) {
         if ( xDiff > 0 ) {
             /* left swipe */
             alert('you swiped left!');
+            plusDivs(-1)
         } else {
             /* right swipe */
+            plusDivs(1)
         }
     } else {
         if ( yDiff > 0 ) {
