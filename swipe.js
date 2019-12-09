@@ -1,48 +1,46 @@
-let touchstartX = 0;
-let touchstartY = 0;
-let touchendX = 0;
-let touchendY = 0;
+document.addEventListener('touchstart', handleTouchStart, false);
+document.addEventListener('touchmove', handleTouchMove, false);
 
-function init() {
-    const gestureZone = document.getElementById('gestureZone');
+var xDown = null;
+var yDown = null;
 
-    gestureZone.addEventListener('touchstart', function(event) {
-                             touchstartX = event.changedTouches[0].screenX;
-                             touchstartY = event.changedTouches[0].screenY;
-                             }, false);
-
-    gestureZone.addEventListener('touchend', function(event) {
-                             touchendX = event.changedTouches[0].screenX;
-                             touchendY = event.changedTouches[0].screenY;
-                             handleGesture();
-                             }, false);
+function getTouches(evt) {
+    return evt.touches ||             // browser API
+    evt.originalEvent.touches; // jQuery
 }
 
-function handleGesture() {
-    if (touchendX <= touchstartX) {
-        console.log('Swiped left');
-    }
-    
-    if (touchendX >= touchstartX) {
-        console.log('Swiped right');
-        alert(swiped + 'right!');
-    }
-    
-    if (touchendY <= touchstartY) {
-        console.log('Swiped up');
-    }
-    
-    if (touchendY >= touchstartY) {
-        console.log('Swiped down');
-    }
-    
-    if (touchendY === touchstartY) {
-        console.log('Tap');
-    }
-}
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+};
 
-document.addEventListener('readystatechange', function() {
-                          if (document.readyState === "complete") {
-                            init();
-                          }
-});
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+    
+    var xUp = evt.touches[0].clientX;
+    var yUp = evt.touches[0].clientY;
+    
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+    
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        if ( xDiff > 0 ) {
+            /* left swipe */
+            alert('you swiped left!')
+        } else {
+            /* right swipe */
+        }
+    } else {
+        if ( yDiff > 0 ) {
+            /* up swipe */
+        } else {
+            /* down swipe */
+        }
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;
+};
