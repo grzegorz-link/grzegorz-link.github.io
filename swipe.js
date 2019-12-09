@@ -33,6 +33,7 @@ function handleTouchMove(evt) {
             plusDivs(-1)
         } else {
             /* right swipe */
+            alert('you swiped right!');
             plusDivs(1)
         }
     } else {
