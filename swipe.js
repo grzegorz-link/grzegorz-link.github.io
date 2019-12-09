@@ -23,6 +23,7 @@ function handleGesture() {
     
     if (touchendX >= touchstartX) {
         console.log('Swiped right');
+        alert(swiped + 'right!');
     }
     
     if (touchendY <= touchstartY) {
