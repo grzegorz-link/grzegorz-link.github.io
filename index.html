@@ -37,7 +37,7 @@ h4 {
 
 <img class="mySlides" id="id1" src="assets/working-strategies.001.jpeg">
 <img class="mySlides" id="id2" src="assets/working-strategies.002.jpeg">
-<img class="mySlides" id="id3" src="assets/working-strategies.003.jpeg">
+<img class="mySlides" id="id3">
 <img class="mySlides" id="id4">
 <img class="mySlides" id="id5">
 <img class="mySlides" id="id6">
@@ -388,15 +388,6 @@ for (i = 0; i < x.length; i++) {
 }
     x[slideIndex-1].style.display = "block";
     
-    // load additional images
-    slideIndexNext = slideIndex + 1;
-    if(slideIndexNext<10 && slideIndexNext < x.length){
-        x[slideIndexNext].src = 'assets/working-strategies.00'+slideIndexNext.toString()+'.jpeg'
-    }
-    if(slideIndexNext>=10 && slideIndexNext < x.length){
-        x[slideIndexNext].src = 'assets/working-strategies.0'+slideIndexNext.toString()+'.jpeg'
-    }
-    
     // load image when needed
     var image = new Image();
     image.onload = function () {
@@ -406,6 +397,15 @@ for (i = 0; i < x.length; i++) {
         image.src = 'assets/working-strategies.00'+slideIndex.toString()+'.jpeg';
     } else {
         image.src = 'assets/working-strategies.0'+slideIndex.toString()+'.jpeg';
+    }
+    
+    // load additional images
+    slideIndexNext = slideIndex + 1;
+    if(slideIndexNext<10 && slideIndexNext < x.length){
+        x[slideIndexNext].src = 'assets/working-strategies.00'+slideIndexNext.toString()+'.jpeg'
+    }
+    if(slideIndexNext>=10 && slideIndexNext < x.length){
+        x[slideIndexNext].src = 'assets/working-strategies.0'+slideIndexNext.toString()+'.jpeg'
     }
 }
 
