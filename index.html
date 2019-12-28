@@ -402,10 +402,10 @@ for (i = 0; i < x.length; i++) {
     // load additional images
     slideIndexNext = slideIndex + 1;
     if(slideIndexNext<10 && slideIndexNext < x.length){
-        x[slideIndexNext].src = 'assets/working-strategies.00'+slideIndexNext.toString()+'.jpeg'
+        x[slideIndexNext-1].src = 'assets/working-strategies.00'+slideIndexNext.toString()+'.jpeg'
     }
     if(slideIndexNext>=10 && slideIndexNext < x.length){
-        x[slideIndexNext].src = 'assets/working-strategies.0'+slideIndexNext.toString()+'.jpeg'
+        x[slideIndexNext-1].src = 'assets/working-strategies.0'+slideIndexNext.toString()+'.jpeg'
     }
 }
 
