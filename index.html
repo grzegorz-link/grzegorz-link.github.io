@@ -388,6 +388,25 @@ for (i = 0; i < x.length; i++) {
 }
     x[slideIndex-1].style.display = "block";
     
+    // load image when needed
+    var image = new Image();
+    image.onload = function () {
+        document.getElementById('id'+slideIndex.toString()).setAttribute('src', this.src);
+    };
+    if(slideIndex<10){
+        image.src = 'assets/working-strategies.00'+slideIndex.toString()+'.jpeg';
+    } else {
+        image.src = 'assets/working-strategies.0'+slideIndex.toString()+'.jpeg';
+    }
+    
+    // load additional images
+    slideIndexNext = slideIndex + 1;
+    if(slideIndexNext<10 && slideIndexNext < x.length){
+        x[slideIndexNext-1].src = 'assets/working-strategies.00'+slideIndexNext.toString()+'.jpeg'
+    }
+    if(slideIndexNext>=10 && slideIndexNext < x.length){
+        x[slideIndexNext-1].src = 'assets/working-strategies.0'+slideIndexNext.toString()+'.jpeg'
+    }
 }
 
 function keyPress(event) {
