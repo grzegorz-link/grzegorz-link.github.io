@@ -36,8 +36,8 @@ h4 {
 <body onkeydown="keyPress(event)">
 
 <img class="mySlides" id="id1" src="assets/working-strategies.001.jpeg">
-<img class="mySlides" id="id2">
-<img class="mySlides" id="id3">
+<img class="mySlides" id="id2" src="assets/working-strategies.002.jpeg">
+<img class="mySlides" id="id3" src="assets/working-strategies.003.jpeg">
 <img class="mySlides" id="id4">
 <img class="mySlides" id="id5">
 <img class="mySlides" id="id6">
@@ -387,6 +387,15 @@ for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
 }
     x[slideIndex-1].style.display = "block";
+    
+    // load additional images
+    slideIndexNext = slideIndex + 1;
+    if(slideIndexNext<10 && slideIndexNext < x.length){
+        x[slideIndexNext].src = 'assets/working-strategies.00'+slideIndexNext.toString()+'.jpeg'
+    }
+    if(slideIndexNext>=10 && slideIndexNext < x.length){
+        x[slideIndexNext].src = 'assets/working-strategies.0'+slideIndexNext.toString()+'.jpeg'
+    }
     
     // load image when needed
     var image = new Image();
