@@ -35,25 +35,25 @@ h4 {
 </head>
 <body onkeydown="keyPress(event)">
 
-<img class="mySlides" src="assets/working-strategies.001.jpeg">
-<img class="mySlides" src="assets/working-strategies.002.jpeg">
-<img class="mySlides" src="assets/working-strategies.003.jpeg">
-<img class="mySlides" src="assets/working-strategies.004.jpeg">
-<img class="mySlides" src="assets/working-strategies.005.jpeg">
-<img class="mySlides" src="assets/working-strategies.006.jpeg">
-<img class="mySlides" src="assets/working-strategies.007.jpeg">
-<img class="mySlides" src="assets/working-strategies.008.jpeg">
-<img class="mySlides" src="assets/working-strategies.009.jpeg">
-<img class="mySlides" src="assets/working-strategies.010.jpeg">
-<img class="mySlides" src="assets/working-strategies.011.jpeg">
-<img class="mySlides" src="assets/working-strategies.012.jpeg">
-<img class="mySlides" src="assets/working-strategies.013.jpeg">
-<img class="mySlides" src="assets/working-strategies.014.jpeg">
-<img class="mySlides" src="assets/working-strategies.015.jpeg">
-<img class="mySlides" src="assets/working-strategies.016.jpeg">
-<img class="mySlides" src="assets/working-strategies.017.jpeg">
-<img class="mySlides" src="assets/working-strategies.018.jpeg">
-<img class="mySlides" src="assets/working-strategies.019.jpeg">
+<img class="mySlides" id="id1">
+<img class="mySlides" id="id2" src="assets/working-strategies.002.jpeg">
+<img class="mySlides" id="id3" src="assets/working-strategies.003.jpeg">
+<img class="mySlides" id="id4" src="assets/working-strategies.004.jpeg">
+<img class="mySlides" id="id5" src="assets/working-strategies.005.jpeg">
+<img class="mySlides" id="id6" src="assets/working-strategies.006.jpeg">
+<img class="mySlides" id="id7"  src="assets/working-strategies.007.jpeg">
+<img class="mySlides" id="id8"  src="assets/working-strategies.008.jpeg">
+<img class="mySlides" id="id9"  src="assets/working-strategies.009.jpeg">
+<img class="mySlides" id="id10"  src="assets/working-strategies.010.jpeg">
+<img class="mySlides" id="id11"  src="assets/working-strategies.011.jpeg">
+<img class="mySlides" id="id12"  src="assets/working-strategies.012.jpeg">
+<img class="mySlides" id="id13"  src="assets/working-strategies.013.jpeg">
+<img class="mySlides" id="id14"  src="assets/working-strategies.014.jpeg">
+<img class="mySlides" id="id15"  src="assets/working-strategies.015.jpeg">
+<img class="mySlides" id="id16"  src="assets/working-strategies.016.jpeg">
+<img class="mySlides" id="id17"  src="assets/working-strategies.017.jpeg">
+<img class="mySlides" id="id18"  src="assets/working-strategies.018.jpeg">
+<!--<img class="mySlides" src="assets/working-strategies.019.jpeg">
 <img class="mySlides" src="assets/working-strategies.020.jpeg">
 <img class="mySlides" src="assets/working-strategies.021.jpeg">
 <img class="mySlides" src="assets/working-strategies.022.jpeg">
@@ -130,7 +130,7 @@ h4 {
 <img class="mySlides" src="assets/working-strategies.093.jpeg">
 <img class="mySlides" src="assets/working-strategies.094.jpeg">
 <img class="mySlides" src="assets/working-strategies.095.jpeg">
-<img class="mySlides" src="assets/working-strategies.096.jpeg">
+<img class="mySlides" src="assets/working-strategies.096.jpeg"> -->
 
 <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
 <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
@@ -387,6 +387,15 @@ for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
 }
     x[slideIndex-1].style.display = "block";
+    var image = new Image();
+    image.onload = function () {
+        document.getElementById('id'+slideIndex.toString()).setAttribute('src', this.src);
+    };
+    if(slideIndex<10){
+        image.src = 'assets/working-strategies.00'+slideIndex.toString()+'.jpeg';
+    } else {
+        image.src = 'assets/working-strategies.0'+slideIndex.toString()+'.jpeg';
+    }
 }
 
 function keyPress(event) {
