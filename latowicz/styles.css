@@ -202,7 +202,16 @@ ol{
     .site-nav li a {
     }*/
     .myimgs {
-        width:90%;
+        width:100%;
+    }
+    .text {
+        color: gray;
+        position: relative;
+        bottom: -80px;
+    }
+    #top, #team, #about, #work, #contact{
+        padding-top:60px;
+    }
     .footer{
         font-size: 1.2em;
         padding: 1% 0% 1% 0%;
