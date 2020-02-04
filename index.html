@@ -24,6 +24,14 @@ h3 {
 h4 {
     margin-left: 2.5%;
 }
+.meter {
+    position: fixed;
+    bottom: 0;
+    height: 10px;
+    background: #c32222;
+    z-index: 99;
+    margin: 0;
+}
 </style>
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -37,7 +45,7 @@ h4 {
         </script>
 </head>
 <body onkeydown="keyPress(event)">
-
+<div class="meter" title="progress bar"></div>
 <img class="mySlides" id="id1" src="assets/spinner.gif" data-src="assets/working-strategies.001.jpeg">
 <img class="mySlides" id="id2" src="assets/spinner.gif" data-src="assets/working-strategies.002.jpeg">
 <img class="mySlides" id="id3" src="assets/spinner.gif" data-src="assets/working-strategies.003.jpeg">
@@ -384,12 +392,14 @@ function currentDiv(n) {
 function showDivs(n) {
 var i;
 var x = document.getElementsByClassName("mySlides");
+var m = document.getElementsByClassName("meter");
 if (n > x.length) {slideIndex = x.length}
 if (n < 1) {slideIndex = 1}
 for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
 }
     x[slideIndex-1].style.display = "block";
+    m[0].style.width = 100.*(slideIndex-1)/(x.length-1) + '%';
     
     // load image when needed
     var image = new Image();
