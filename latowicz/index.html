@@ -23,10 +23,15 @@
 <body onkeydown="keyPress(event)">
     
 <nav class="site-nav">
-    <ul><a href="#contact"><img src='images/paws.png' border='0' width='' height='60'></a>
-        <li><a href="#top">Gabinet Latowicz</a></li>
-        <li><a href="#work">Usługi</a></li>
+    <ul>
+        <li id="logo"><a href="#top"><img src='images/latowicz.png' border='0' width='' height='150' style='margin-top:10px;'></a></li>
+        <div class="header">
+        <span style="white-space: nowrap;"><span style="margin-left:40px; margin-right:8px;"><a href="tel:+48518118570"><img src="images/tel_icon.png" align="center" width=20 alt="telefon"></span><span style="white-space: nowrap;"><b>518 118 570</b></a></span></span>
+        <span style="white-space: nowrap;"><span style="margin-left:40px; margin-right:8px;"><a href="https://goo.gl/maps/DCECVnsEvprWEuyz8"><img src="images/home_icon.png" align="center" width=20 alt="adres"/></a></span>Tadeusza Kościuszki 42, <span style="white-space: nowrap;">05-334 Latowicz</span> <a href="https://goo.gl/maps/DCECVnsEvprWEuyz8"><b>(mapa)</b></a></span></span>
+        <span style="white-space: nowrap;"><span style="margin-left:40px; margin-right:8px;"><a href="https://goo.gl/maps/DCECVnsEvprWEuyz8"><img src="images/clock_icon.png" align="center" width=20 alt="godziny"/></a></span>Pon - Pt: <span style="white-space: nowrap;"><b>9:00-15:00</b></span>, Sob: <span style="white-space: nowrap;"><b>9:00-14:00</b></span></span>
+        </div><br>
         <li><a href="#about">Godziny Przyjęć</a></li>
+        <li><a href="#work">Usługi</a></li>
         <li><a href="#team">Zespół</a></li>
         <li><a href="#contact">Kontakt</a></li>
     </ul>
@@ -39,41 +44,6 @@
 
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v5.0"></script>
-    
-<div id="top">
-    <!-- Slideshow container -->
-    <div class="slideshow-container">
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
-            <img class="myimgs" id="id1" src="images/latowicz.jpg">
-            <div class="text">Siedziba gabinetu Latowicz</div>
-        </div>
-        
-        <div class="mySlides fade">
-            <img class="myimgs" id="id2" src="images/limousine.jpg">
-            <div class="text">Pacjentki (rasy limousine)</div>
-        </div>
-        <!-- The dots/circles -->
-        <div class="dot-bar" style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-        </div>
-    </div>
-    <br><br>
-</div>
-
-<div id="work">
-    <h3>Nasze usługi</h3>
-    <p>Opiekujemy się zwięrzętami gospodarskimi i towarzyszącymi.</p>
-    <ol align="center">
-        <li><b>Leczenie i profilatktyka</b></li>
-        <li><b>Rozród i badanie USG</b></li>
-        <li><b>Inseminacje</b></li>
-        <li><b>Szczepienia</b></li>
-        <li><b>Dorardztwo hodowlane</b></li>
-        <li><b>Chirurgia miękka</b></li>
-    </ol>
-</div>
 
 <div id="about" class="section p-about">
     <h3>Witamy</h3>
@@ -83,6 +53,19 @@
     <img class="myimgs" id="id3" style="width:128px;height:128px;" src="images/cow-sketch-inv.png">
 </div>
 
+<div class="work" id="work">
+    <h3>Nasze usługi</h3>
+    <p>Opiekujemy się zwięrzętami gospodarskimi i towarzyszącymi.</p>
+    <ul align="center">
+        <li><b>Leczenie i profilatktyka</b></li>
+        <li><b>Rozród i badanie USG</b></li>
+        <li><b>Inseminacje</b></li>
+        <li><b>Szczepienia</b></li>
+        <li><b>Dorardztwo hodowlane</b></li>
+        <li><b>Chirurgia miękka</b></li>
+    </ul>
+</div>
+
 <div id="team" class="section p-team">
     <h3>Poznaj nasz zespół</h3>
     <h4>lek. wet. Kacper Guzowski</h4>
@@ -90,6 +73,29 @@
     <br><br>
     <h4>lek. wet. Katarzyna Link</h4>
     <img width=15% src="images/profile.png">
+    <br><br>
+</div>
+
+<div id="top">
+    <h3>Gabinet Latowicz</h3>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <img class="myimgs" id="id1" src="images/latowicz.jpg">
+                <div class="text">Siedziba gabinetu Latowicz</div>
+                </div>
+        
+        <div class="mySlides fade">
+            <img class="myimgs" id="id2" src="images/limousine.jpg">
+                <div class="text">Pacjentki (rasy limousine)</div>
+                </div>
+        <!-- The dots/circles -->
+        <div class="dot-bar" style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </div>
     <br><br>
 </div>
 
@@ -111,9 +117,9 @@
 <div class="footer">
     <p><br><br>Zapraszamy na wizytę!<br><br>
     Gabinet Weterynaryjny Latowicz<br><br>
-    <a href="https://goo.gl/maps/DCECVnsEvprWEuyz8"><img src="images/home_icon_big.png" align="center" width=54 alt="adres"/></a>adres: Tadeusza Kościuszki 42, <span style="white-space: nowrap;">05-334 Latowicz</span> <a href="https://goo.gl/maps/DCECVnsEvprWEuyz8"><b>(mapa)</b></a><br><br>
-    <img src="images/tel_icon_big.png" align="center" width=48 alt="telefon"/> telefon: <span style="white-space: nowrap;"><b>518 118 570</b></span><br><br>
-    <a href="https://web.facebook.com/wet.Latowicz" target="_blank"><img src="images/fb_icon.png" align="center" width=48 alt="facebook"/></a> facebook: <a href="https://web.facebook.com/wet.Latowicz"><b>fb/wet.Latowicz</b></a>
+    <span style="margin-right:8px;"><a href="https://goo.gl/maps/DCECVnsEvprWEuyz8"><img src="images/home_icon_big.png" align="center" width=54 alt="adres"/></a></span>adres: Tadeusza Kościuszki 42, <span style="white-space: nowrap;">05-334 Latowicz</span> <a href="https://goo.gl/maps/DCECVnsEvprWEuyz8"><b>(mapa)</b></a><br><br>
+    <span style="margin-right:8px;"><a href="tel:+48518118570"><img src="images/tel_icon_big.png" align="center" width=48 alt="telefon"/></a></span> telefon: <a href="tel:+48518118570"><span style="white-space: nowrap; color:white;"><b>518 118 570</b></span></a><br><br>
+    <span style="margin-right:8px;"><a href="https://web.facebook.com/wet.Latowicz" target="_blank"><img src="images/fb_icon.png" align="center" width=48 alt="facebook"/></a></span> facebook: <a href="https://web.facebook.com/wet.Latowicz"><b>fb/wet.Latowicz</b></a>
     </p>
 </div>
 
