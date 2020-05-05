@@ -26,9 +26,9 @@ h4 {
 }
 .topleft {
     position: absolute;
-    top: 12px;
-    left: 16px;
-    font-size: 80%;
+    top: 16px;
+    left: 12vw;
+    font-size: 3vw;
     font-weight: bold;
     display: block;
 }
@@ -56,7 +56,7 @@ h4 {
 </head>
 <body onkeydown="keyPress(event)">
 <div class="meter" title="progress bar"></div>
-<div class="topleft" style="color:white;">Use arrow keys<br>or swipe (left / right)<br>to change slides</div>
+<div class="topleft" style="color:white;">Use arrow keys or swipe (left / right) to change slides</div>
 <img class="mySlides" id="id1" src="assets/spinner.gif" data-src="assets/working-strategies.001.jpeg" alt="Use arrow keys (left / right) to change slides">
 <img class="mySlides" id="id2" src="assets/spinner.gif" data-src="assets/working-strategies.002.jpeg">
 <img class="mySlides" id="id3" src="assets/spinner.gif" data-src="assets/working-strategies.003.jpeg">
@@ -414,7 +414,7 @@ for (i = 0; i < x.length; i++) {
     image.onload = function () {
         document.getElementById('id'+slideIndex.toString()).setAttribute('src', this.src);
     };
-    if(slideIndex<17){
+    if(slideIndex==1){
         document.getElementsByClassName("topleft")[0].style.display = "block";
     } else{
         document.getElementsByClassName("topleft")[0].style.display = "none";
