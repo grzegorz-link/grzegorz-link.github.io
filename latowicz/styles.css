@@ -298,6 +298,14 @@ ol{
     }
 }
 
+@media screen and (min-width: 1200px) {
+    .site-nav ul {
+        background-image: url("images/background.jpg");
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+}
+
 a{
     color: #0c8141;
 }
