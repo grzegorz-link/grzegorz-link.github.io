@@ -4,6 +4,7 @@ body {
     font-family: Helvetica;
     font-size: 16px;
     text-align: center;
+    color:dimgray;
     margin-left: auto;
     margin-right: auto;
     background-image: url("images/paws.png");
@@ -16,19 +17,25 @@ body {
 
 .myimgs {
     display:block;
-    width:60%;
+    width:100%;
     margin-left: auto;
     margin-right: auto;
 }
 
-#top, #team, #about, #work, #contact{
+#top, #team, #about, #work, #photo, #contact{
     padding-top:170px;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .header{
     margin-top:10px;
     margin-bottom:20px;
     min-width:800px;
+}
+
+.header-mobile{
+    display:none;
 }
 
 /* Slideshow container */
@@ -133,15 +140,14 @@ body {
     margin-left: 3.4vw;
     margin-right: 3.4vw;
     width: 100%;
-    font-size: 1.6em;
-    line-height: 70px;
+    font-size: min(2vw,1.2em);
+    line-height: 180%;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     -webkit-transition: all 0.5s linear;
     -moz-transition: all 0.5s linear;
     transition: all 0.5s linear;
-    font-size: 2vw;
 }
 
 .site-nav li a:hover {
@@ -169,11 +175,27 @@ ol{
 
 .work ul{
     text-align: left;
-    list-style-position: inside;
+    list-style-position: outside;
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
-    list-style-image: url('images/green_tick_icon.png');
+    /*list-style-image: url('images/green_tick_icon.png');*/
+    list-style-image: none;
+}
+
+.team ul{
+    text-align: center;
+    list-style-position: outside;
+    list-style-type: none;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team li{
+    float: left;
+    display: inline;
+    width: 50%;
 }
 
 .fb-page{
@@ -199,7 +221,7 @@ ol{
 }
 
 /* Responsive navigation menu (for mobile devices) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     /*body{
     }
     div{
@@ -210,12 +232,20 @@ ol{
     .dot-bar {
         padding-top:0px;
         position:relative;
-    }
-    #top, #team, #about, #work, #contact{
-        max-height:500px;
     }*/
+    #top, #team, #about, #work, #photo, #contact{
+        margin-left: 15%;
+        margin-right: 15%;
+        min-width: 300px;
+    }
     .header{
         display:none;
+    }
+    .header-mobile{
+        display: block;
+        position: absolute;
+        top: 10%;
+        left: 18%;
     }
     .site-nav ul{
         min-height: 278px;
@@ -233,7 +263,8 @@ ol{
     }
     .site-nav li a {
         min-width:50%;
-        height: 65px;
+        height: 45px;
+        padding-top: 20px;
         float: none;
         font-size: 1em;
     }
@@ -254,12 +285,12 @@ ol{
         position: relative;
         bottom: -80px;
     }
-    #top, #team, #about, #work, #contact{
+    #top, #team, #about, #work, #photo, #contact{
         padding-top:248px;
     }
     .footer{
-        font-size: 1.2em;
-        padding: 1% 0% 1% 0%;
+        font-size: 1.0em;
+        padding: 1% 0% 2% 2%;
         max-width: 100%;
     }
 }
