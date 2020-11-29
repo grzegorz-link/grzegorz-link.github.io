@@ -9,7 +9,7 @@ body {
     color:dimgray;
     margin-left: auto;
     margin-right: auto;
-    background-image: url("images/paws.png");
+    background-image: url("images/paws-transparent.png");
     background-repeat: repeat-y;
     background-attachment: scroll;
     background-position: 3%;
@@ -228,6 +228,7 @@ ol{
 @media screen and (max-width: 768px) {
     body{
         line-height: 1.2;
+        background-image: url("images/paws-transparent.png");
     }
     /*div{
     }
@@ -239,9 +240,13 @@ ol{
         position:relative;
     }*/
     #top, #team, #about, #work, #photo, #contact{
-        margin-left: 15%;
-        margin-right: 15%;
+        margin-left: 3%;
+        margin-right: 3%;
         min-width: 300px;
+    }
+    #team ul{
+        margin-left: 0;
+        margin-right: 6%;
     }
     .header{
         display:none;
@@ -287,6 +292,9 @@ ol{
         color: white;
         position: relative;
         bottom: 40px;
+    }
+    .team ul{
+        margin-left: 0%;
     }
     .team li{
         width: 100%;
